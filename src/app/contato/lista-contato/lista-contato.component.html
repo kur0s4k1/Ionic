@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lista de Contatos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let contato of contatoService.listaContatos$ | async">
+      <ion-label>{{contato.nome}}</ion-label>
+      <ion-label>{{contato.telefone}}</ion-label>
+     <ion-button color="danger" (click)="excluir(contato.key)"><ion-icon name="trash"></ion-icon></ion-button>
+     <ion-button color="success" (click)="alterar(contato,contato.key)"><ion-icon name="bookmark"></ion-icon></ion-button>
+
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button href="contato">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="">
+      <ion-icon name="undo"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

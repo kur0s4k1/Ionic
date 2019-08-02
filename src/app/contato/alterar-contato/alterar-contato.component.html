@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Adicionar Contato
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="ion-padding">
+  
+      <ion-item>
+        <ion-label position="floating">Nome do contato</ion-label>
+        <ion-input [(ngModel)]="contatoService.contato.nome" name="nome"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Telefone</ion-label>
+        <ion-input [(ngModel)]="contatoService.contato.telefone"  name="telefone"></ion-input>
+      </ion-item>
+  
+      <ion-button (click)="contatoService.salvar()" expand="block">Enviar</ion-button>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button routerLink="">
+          <ion-icon name="undo"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+  
+  </ion-content>
